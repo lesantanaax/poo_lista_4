@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace listFive
+{
+    internal class Pedido
+    {
+        public List<Produto> Produtos = new List<Produto>();
+        double valorTotalPedido;
+        public void AdicionarProduto(Produto produto)
+        {
+            Produtos.Add(produto);
+            Console.WriteLine($"O produto {produto.nome} foi adicionado!");
+
+        }
+
+        public double CalcularValorTotal()
+        {
+            foreach (Produto produto in Produtos)
+
+            this.valorTotalPedido += produto.qtd * produto.preco;
+            Console.WriteLine($"O valor total é: {this.valorTotalPedido}");
+            return this.valorTotalPedido;
+        }
+    }
+}
