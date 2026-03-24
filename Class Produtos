@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace listFive
+{
+    internal class Produto
+    {
+        public string nome;
+        public double preco;
+        public int qtd;
+
+        public Produto (string nome, double valor, int qtd)
+        {
+           this.nome = nome;
+           this.preco = valor;
+           this.qtd = qtd;
+        }
+    }
+}
