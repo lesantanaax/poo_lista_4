@@ -1,0 +1,8 @@
+Produto leite= new Produto("Leite", 10.50 , 2);
+Produto cafe = new Produto("Café", 15, 2);
+Pedido pedido1 = new Pedido();
+
+pedido1.AdicionarProduto(cafe);
+pedido1.AdicionarProduto(leite);
+
+Console.WriteLine(pedido1.CalcularValorTotal());
