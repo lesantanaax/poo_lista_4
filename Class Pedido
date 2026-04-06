@@ -1,31 +1,37 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-
-namespace listFive
+namespace estudo_poo_prova
 {
     internal class Pedido
     {
-        public List<Produto> Produtos = new List<Produto>();
-        double valorTotalPedido;
-        public void AdicionarProduto(Produto produto)
-        {
-            Produtos.Add(produto);
-            Console.WriteLine($"O produto {produto.nome} foi adicionado!");
-
+        List<Produto> produtos;
+        public Pedido() { 
+            this.produtos = new List<Produto>();
         }
 
-        public double CalcularValorTotal()
-        {
-            foreach (Produto produto in Produtos)
+        public void AdicionarProduto(Produto produto) { 
+            this.produtos.Add(produto);
+        }
 
-            this.valorTotalPedido += produto.qtd * produto.preco;
-            Console.WriteLine($"O valor total é: {this.valorTotalPedido}");
-            return this.valorTotalPedido;
+        public void CalcularValorTotal()
+        {
+            double valorTotal = 0;
+            foreach (Produto produto in produtos)
+            {
+                valorTotal += produto.Preco;
+            }
+            Console.WriteLine($"Valor total do pedido: R${valorTotal}");
+        }
+
+        public void ListarProdutos()
+        {
+            Console.WriteLine("Produtos no pedido:");
+            foreach (Produto produto in produtos)
+            {
+                Console.WriteLine($"- {produto.Nome}: R${produto.Preco}");
+            }
         }
     }
 }
