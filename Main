@@ -1,8 +1,13 @@
-Produto leite= new Produto("Leite", 10.50 , 2);
-Produto cafe = new Produto("Café", 15, 2);
-Pedido pedido1 = new Pedido();
+using estudo_poo_prova;
 
-pedido1.AdicionarProduto(cafe);
-pedido1.AdicionarProduto(leite);
+Produto notebook = new Produto("Notebook", 2500.00);
+Produto mouse = new Produto("Mouse", 150.00);
+Produto teclado = new Produto("Teclado", 300.00);
+Pedido pedido = new Pedido();
 
-Console.WriteLine(pedido1.CalcularValorTotal());
+pedido.AdicionarProduto(notebook);
+pedido.AdicionarProduto(mouse);
+pedido.AdicionarProduto(teclado);
+
+pedido.CalcularValorTotal();
+pedido.ListarProdutos();
